@@ -182,7 +182,6 @@ class _UserFormPageState extends State<UserFormPage> {
                     uploadUserData(name, age, gender, image);
                     uploadImage();
                     _insert(name, age, gender, image, sync);
-                    // // addNewForm();
                     // final newuser = FormData(1, name, age, gender, 'hhd');
                     // repository
                     //     .addPet(newuser)
@@ -203,10 +202,6 @@ class _UserFormPageState extends State<UserFormPage> {
 
   void _insert(
       String name, int age, String gender, String image, int sync) async {
-    // print(name);
-    // print(age);
-    // print(gender);
-    // print(image);
     Map<String, dynamic> row = {
       DatabaseHelper.columName: name,
       DatabaseHelper.columnAge: age,
