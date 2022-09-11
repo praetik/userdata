@@ -69,7 +69,7 @@ class DatabaseHelper {
     return qureyResult.map((e) => UserModel.fromMap(e)).toList();
   }
 
-  static Future<void> updateSync(int sync, int id) async {
+  Future<void> updateSync(int sync, int id) async {
     Database db = await instance.database;
     await db
         .rawUpdate('UPDATE user_info SET sync = ? WHERE id = ?', [sync, id]);

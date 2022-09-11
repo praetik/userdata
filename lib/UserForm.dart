@@ -182,6 +182,7 @@ class _UserFormPageState extends State<UserFormPage> {
                     uploadUserData(name, age, gender, image);
                     uploadImage();
                     _insert(name, age, gender, image, sync);
+
                     // final newuser = FormData(1, name, age, gender, 'hhd');
                     // repository
                     //     .addPet(newuser)

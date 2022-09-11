@@ -10,6 +10,7 @@ import 'database/databaseHelper.dart';
 import 'database/userModel.dart';
 import 'package:usedata/operation.dart';
 import 'package:path_provider/path_provider.dart';
+import 'database/databaseHelper.dart';
 
 class SyncData extends StatefulWidget {
   const SyncData({Key? key}) : super(key: key);
@@ -76,6 +77,7 @@ class _SyncDataState extends State<SyncData> {
       File file = File('${directory.path}/${value.image}');
       String baseame = basename(file.path);
       uploadUserData(value.name, value.age, value.gender, baseame);
+      dbHelper.updateSync(1, value.id!);
       try {
         final ref = firebase_storage.FirebaseStorage.instance
             .ref(destination)
